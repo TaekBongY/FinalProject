@@ -1,3 +1,4 @@
+//css : scpt
 const theme = {
   colors: {
     primary: '#646cff',
