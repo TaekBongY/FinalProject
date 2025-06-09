@@ -10,7 +10,8 @@
     "lint:fix": "eslint . --ext .js,.jsx --fix",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "preview": "vite preview",
-    "server": "json-server --watch db.json --port 3001"
+    "server": "json-server --watch db.json --port 3001",
+    "convert-css": "jscodeshift -t scripts/transform-css-theme.js src/"
   },
   "dependencies": {
     "axios": "^1.9.0",

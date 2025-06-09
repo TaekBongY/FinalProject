@@ -9,5 +9,8 @@
   },
 
   // 기본 포맷터를 Prettier로 설정
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // VS Code에도 동일한 설정
+  "prettier.printWidth": 140
 }
