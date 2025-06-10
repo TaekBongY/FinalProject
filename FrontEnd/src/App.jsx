@@ -1,9 +1,13 @@
 import './App.css';
 import Home from './pages/Home';
+import { ThemeProvider } from 'styled-components';
+import theme from './styles/theme';
 
 function App() {
   return (
-<Home></Home>
+    <ThemeProvider theme={theme}>
+      <Home />
+    </ThemeProvider>
   );
 }
 
