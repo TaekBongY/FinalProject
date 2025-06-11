@@ -1,5 +1,12 @@
 import React from 'react';
+<<<<<<< HEAD
 import styled from 'styled-components';
+=======
+import Footer from '../components/Footer';
+const Home = () => {
+  return <Footer></Footer>;
+};
+>>>>>>> d411401 (Footer 완료)
 
 const Home = () => {
   return <Div1>테스트임</Div1>;

@@ -1,16 +1,25 @@
 import React from 'react';
 import Header from './Header';
+<<<<<<< HEAD
 import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
+=======
+import Footer from './Footer';
+>>>>>>> d411401 (Footer 완료)
 
 const Layout = () => {
   return (
     <>
       <Header />
+<<<<<<< HEAD
       <Content>
         <Outlet />
       </Content>
       
+=======
+      <Content>{children}</Content>
+      <Footer></Footer>
+>>>>>>> d411401 (Footer 완료)
     </>
   );
 };
