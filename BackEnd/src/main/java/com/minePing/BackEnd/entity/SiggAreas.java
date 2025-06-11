@@ -1,6 +1,6 @@
 package com.minePing.BackEnd.entity;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
@@ -9,5 +9,17 @@ import lombok.*;
 @Builder
 @Entity
 public class SiggAreas {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
+    private Integer Id;
+
+    @Column(name="name",nullable = false,length = 50)
+    private String name;
+
+    //연관관계해줘야함
+    @Column(name = "sido_area_id")
+    private Integer sidoAreaId;
 
 }

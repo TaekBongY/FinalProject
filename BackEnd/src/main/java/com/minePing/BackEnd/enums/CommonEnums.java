@@ -18,4 +18,12 @@ public class CommonEnums {
     public enum Approve {
         Y, N
     }
+
+    public enum Mbti {
+        ISTJ, ISFJ, ESTP, ESFP, INFJ, INTJ, ENFP, ENTP, ISTP, ISFP, ESTJ, ESFJ, INFP, INTP, ENFJ, ENTJ
+    }
+
+    public enum Separation {
+        S,B
+    }
 }
