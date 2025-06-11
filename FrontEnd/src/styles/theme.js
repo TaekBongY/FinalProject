@@ -106,6 +106,10 @@ const theme = {
     toast: 1700,
     tooltip: 1800,
   },
+  fontFamily : {
+    primary : 'Godu B',
+    secondary : 'GyeonggiTitleOTF',
+  },
 };
 
 export default theme;

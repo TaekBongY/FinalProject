@@ -1,48 +1,40 @@
 // height, width로 페이지 마다 크기 추가 조정 필요
 // left top, right, bottom으로 위치도 추가 조정 필요
-export const buttonLogin = {
-  boxSizing: 'border-box',
-  position: 'absolute',
-  width: '200px',
-  height: '60px',
-  left: 'calc(50% - 100px)',
-  top: 'calc(50% - 30px)',
-  border: '4px solid #000000',
-  borderRadius: '50px',
-  fontFamily: 'GyeonggiTitleOTF',
-  fontStyle: 'normal',
-  fontWeight: 500,
-  fontSize: '20px',
-  lineHeight: '20px',
-  color: '#000000',
-};
 
-export const buttonYb = {
-  position: 'absolute',
+const btn = {
+  buttonLogin : {
+    boxSizing: 'border-box',
+    position: 'absolute',
+    width: '200px',
+    height: '60px',
+    left: 'calc(50% - 100px)',
+    top: 'calc(50% - 30px)',
+    border: '4px solid #000000',
+    borderRadius: '50px',
+    fontFamily: 'GyeonggiTitleOTF',
+    fontStyle: 'normal',
+    fontWeight: 500,
+    fontSize: '20px',
+    lineHeight: '20px',
+    color: '#000000',
+  },
+  buttonYb : {
+    background: '#FFEB8C',
+    borderRadius: '10px',
+    fontFamily: 'Godo B',
+    fontStyle: 'normal',
+    fontWeight: 400,
+    fontSize: '20px',
+    lineHeight: '23px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    cursor: 'pointer',
+  },
+buttonBorder : {
+  boxSizing: 'border-box',
   width: '200px',
   height: '40px',
-  left: 'calc(50% - 200px / 2 - 148px)',
-  top: '702px',
-  background: '#FFEB8C',
-  borderRadius: '10px',
-  fontFamily: 'Godo B',
-  fontStyle: 'normal',
-  fontWeight: 400,
-  fontSize: '20px',
-  lineHeight: '23px',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  cursor: 'pointer',
-};
-
-export const buttonBorder = {
-  boxSizing: 'border-box',
-  position: 'absolute',
-  width: '200px',
-  height: '40px',
-  left: 'calc(50% - 60px / 2)',
-  top: 'calc(50% - 23px / 2 + 0.5px)',
   background: '#feffe0',
   border: '3px solid #dda900',
   borderRadius: '10px',
@@ -55,9 +47,8 @@ export const buttonBorder = {
   fontSize: '20px',
   lineHeight: '23px',
   color: '#000000',
-};
-
-export const buttonWhite = {
+},
+buttonWhite : {
   boxSizing: 'border-box',
   position: 'absolute',
   width: '200px',
@@ -77,16 +68,8 @@ export const buttonWhite = {
   color: '#000000',
   justifyContent: 'center',
   cursor: 'pointer',
-};
-
-export const buttonDetail = {
-  position: 'absolute',
-  width: '200px',
-  height: '60px',
-  left: '30%',
-  right: '30%',
-  top: '31.67%',
-  bottom: '30%',
+},
+buttonDetail : {
   background: 'rgba(250, 215, 0, 0.7)',
   borderRadius: '10px',
   filter: 'drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))',
@@ -98,5 +81,8 @@ export const buttonDetail = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  color: '#ffffff',
+},
 };
+
+
+export default btn;

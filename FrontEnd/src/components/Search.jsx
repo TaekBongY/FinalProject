@@ -1,12 +1,19 @@
 import React from 'react'
 import SearchBar from './SearchBar'
 import styled from 'styled-components'
+import MyinfoStatus from './MyinfoStatus'
+import { useLocation } from 'react-router-dom'
+
 const Search = () => {
+    const location = useLocation();
+    const isHomePage = location.pathname ==='/';
+
   return (
     <SearchWrap>
     <SearchBg>
         <SearchInner>
             <SearchBar />
+            {isHomePage && <MyinfoStatus/>}
         </SearchInner>
     </SearchBg>
     </SearchWrap>

@@ -6,7 +6,7 @@ import theme from './styles/theme';
 import GlobalStyle from './styles/GlobalStyle';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import SearchBar from './components/SearchBar';
+import Workcation from './pages/Workcation';
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +16,7 @@ function App() {
           {/* 레이아웃 적용*/}
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/wrokcation" element={<Workcation />} />
           </Route>
           {/* 레이아웃 미적용*/}
           {/* <Route path="/error" element={<Error404 />} /> */}
