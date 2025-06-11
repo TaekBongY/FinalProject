@@ -1,15 +1,6 @@
 import React from 'react';
-<<<<<<< HEAD
-<<<<<<< HEAD
 import styled from 'styled-components';
-=======
-import Footer from '../components/Footer';
-=======
->>>>>>> 9949133 (Revert "Footer 완료")
-const Home = () => {
-  return <>Test</>;
-};
->>>>>>> d411401 (Footer 완료)
+
 
 const Home = () => {
   return <Div1>테스트임</Div1>;

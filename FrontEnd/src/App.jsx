@@ -8,7 +8,6 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 function App() {
   return (
-<<<<<<< HEAD
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
@@ -22,11 +21,6 @@ function App() {
         </Routes>
       </ThemeProvider>
     </BrowserRouter>
-=======
-    <ThemeProvider theme={theme}>
-      <Home />
-    </ThemeProvider>
->>>>>>> d411401 (Footer 완료)
   );
 }
 
