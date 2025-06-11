@@ -25,7 +25,6 @@ function App() {
 =======
     <ThemeProvider theme={theme}>
       <Home />
-      
     </ThemeProvider>
 >>>>>>> d411401 (Footer 완료)
   );
