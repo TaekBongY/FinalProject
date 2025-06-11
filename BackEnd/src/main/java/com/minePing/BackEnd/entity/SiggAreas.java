@@ -9,4 +9,5 @@ import lombok.*;
 @Builder
 @Entity
 public class SiggAreas {
+
 }

@@ -9,4 +9,10 @@ import lombok.*;
 @Builder
 @Entity
 public class WorcationAmenity {
+
+    private Long worcAmenityNo;
+
+    private Long worcationNo;
+
+    private Long amenitiesNo;
 }

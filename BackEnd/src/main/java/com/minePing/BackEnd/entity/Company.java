@@ -1,6 +1,6 @@
 package com.minePing.BackEnd.entity;
 
-import com.love.myping.enums.CommonEnums;
+import com.minePing.BackEnd.enums.CommonEnums;
 import jakarta.persistence.*;
 import lombok.*;
 

@@ -1,6 +1,7 @@
 package com.minePing.BackEnd.entity;
 
-import com.love.myping.enums.CommonEnums;
+import com.minePing.BackEnd.enums.CommonEnums;
+import com.minePing.BackEnd.enums.HealthEnums;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -36,23 +37,23 @@ public class Health {
 
     @Column(name="health_condition", nullable = false)
     @Enumerated(EnumType.STRING)
-    private CommonEnums.HealthCondition healthCondition;
+    private HealthEnums.HealthCondition healthCondition;
 
     @Column(name="cholesterol_level", nullable = false)
     private Integer cholesterolLevel;
 
     @Column(name="smoking_status", nullable = false)
     @Enumerated(EnumType.STRING)
-    private CommonEnums.SmokingStatus smokingStatus;
+    private HealthEnums.SmokingStatus smokingStatus;
 
     @Column(name="physical_activity", nullable = false)
     @Enumerated(EnumType.STRING)
-    private CommonEnums.PhysicalActivity physicalActivity;
+    private HealthEnums.PhysicalActivity physicalActivity;
 
     @Column(name = "sleep_hours", nullable = false)
     private Double sleepHours;
 
     @Column(name="diet_type", nullable = false)
     @Enumerated(EnumType.STRING)
-    private CommonEnums.DietType dietType;
+    private HealthEnums.DietType dietType;
 }
