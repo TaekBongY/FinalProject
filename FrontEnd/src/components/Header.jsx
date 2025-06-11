@@ -11,8 +11,8 @@ const menuData = [
     items: [
       { title: '스트레스 검사', path: '/test/stress' },
       { title: '번아웃 검사', path: '/test/burnout' },
-      { title: '성향 검사', path: '/test/tendency' }
-    ]
+      { title: '성향 검사', path: '/test/tendency' },
+    ],
   },
   {
     title: '워케이션',
@@ -21,13 +21,13 @@ const menuData = [
       { title: '전체보기', path: '/workation/all' },
       { title: '제휴업체', path: '/workation/partners' },
       { title: 'AI 추천', path: '/workation/ai' },
-      { title: '워케이션 등록', path: '/workation/register' }
-    ]
+      { title: '워케이션 등록', path: '/workation/register' },
+    ],
   },
   {
     title: '식단정보',
     path: '/eat',
-    items: [' ']
+    items: [' '],
   },
   {
     title: '직원관리',
@@ -36,36 +36,33 @@ const menuData = [
       { title: '직원목록', path: '/member/list' },
       { title: '워케이션 신청자', path: '/member/workation-applies' },
       { title: '상담 필요자', path: '/member/needs-consult' },
-      { title: '직원 신청', path: '/member/applies' }
-    ]
+      { title: '직원 신청', path: '/member/applies' },
+    ],
   },
   {
     title: '로그인',
     items: [
       { title: '내 정보', path: '/my/info' },
       { title: '신체 정보', path: '/my/body' },
-      { title: '워케이션 신청내역', path: '/my/workation-history' }
-    ]
-  }
+      { title: '워케이션 신청내역', path: '/my/workation-history' },
+    ],
+  },
 ];
 
 const Header = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
   return (
-      <HeaderWrap 
-        onMouseEnter={() => setDropdownVisible(true)}
-        onMouseLeave={() => setDropdownVisible(false)}
-      >
-        <HeaderBg>
-          <HeaderInner>
-            <LogoWrap>
-              <LogoImg src={logo} alt="logo" />
-            </LogoWrap>
-            <NavWrap>
-              <Nav>
-                {menuData.map((menu, idx) => (
-                  <NavItem key={idx} className="nav-item">
+    <HeaderWrap onMouseEnter={() => setDropdownVisible(true)} onMouseLeave={() => setDropdownVisible(false)}>
+      <HeaderBg>
+        <HeaderInner>
+          <LogoWrap>
+            <LogoImg src={logo} alt="logo" />
+          </LogoWrap>
+          <NavWrap>
+            <Nav>
+              {menuData.map((menu, idx) => (
+                <NavItem key={idx} className="nav-item">
                   {menu.title === '로그인' ? (
                     <StyleLinkButton to="/login">{menu.title}</StyleLinkButton>
                   ) : menu.path ? (
@@ -74,35 +71,34 @@ const Header = () => {
                     menu.title
                   )}
                 </NavItem>
-                ))}
-              </Nav>
-            </NavWrap>
-          </HeaderInner>
-        </HeaderBg>
+              ))}
+            </Nav>
+          </NavWrap>
+        </HeaderInner>
+      </HeaderBg>
 
-        {isDropdownVisible && (
-          <DropdownWrap>
-            <DropdownContent>
-                {menuData
-                  .filter(menu => menu.items && menu.items.length > 0)
-                  .map((menu, idx) => (
-                      <DropdownColumn key={idx}>
-                        <ul>
-                          {menu.items.map((item, subIdx) => (
-                            <li key={subIdx}>
-                              <StyleLink to={item.path}>{item.title}</StyleLink>
-                            </li>
-                          ))}
-                        </ul>
-                      </DropdownColumn>
-                ))}
-            </DropdownContent>
-          </DropdownWrap>
-        )}
-      </HeaderWrap>
+      {isDropdownVisible && (
+        <DropdownWrap>
+          <DropdownContent>
+            {menuData
+              .filter((menu) => menu.items && menu.items.length > 0)
+              .map((menu, idx) => (
+                <DropdownColumn key={idx}>
+                  <ul>
+                    {menu.items.map((item, subIdx) => (
+                      <li key={subIdx}>
+                        <StyleLink to={item.path}>{item.title}</StyleLink>
+                      </li>
+                    ))}
+                  </ul>
+                </DropdownColumn>
+              ))}
+          </DropdownContent>
+        </DropdownWrap>
+      )}
+    </HeaderWrap>
   );
 };
-
 
 const HeaderWrap = styled.header`
   position: relative;

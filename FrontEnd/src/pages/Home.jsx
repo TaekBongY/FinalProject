@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-
-
+import Button from '../components/Button';
 const Home = () => {
-  return <Div1>테스트임</Div1>;
+  return <Button>테스트임</Button>;
 };
 const Div1 = styled.div`
   width: 100%;
