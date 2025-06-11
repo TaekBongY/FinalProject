@@ -1,8 +1,8 @@
 //css : scpt
 const theme = {
   colors: {
-    primary: '#646cff',
-    secondary: '#535bf2',
+    primary: '#FFEB8C',
+    secondary: '#FAD700',
     info: '#61dafb',
     success: '#22c55e',
     warning: '#f59e0b',
@@ -107,7 +107,7 @@ const theme = {
     tooltip: 1800,
   },
   fontFamily : {
-    primary : 'Godu B',
+    primary : 'Godo B',
     secondary : 'GyeonggiTitleOTF',
   },
 };

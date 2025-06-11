@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import SearchBtn from '../assets/SearchBtn.png'
-import btn from '../styles/Button'
+import SearchBtn from '../../../assets/SearchBtn.png'
+import btn from '../../../styles/Button'
 const SearchBar = () => {
   return (
         <BarWrap>
@@ -25,10 +25,10 @@ const BarWrap = styled.div`
     display : flex;
     align-items : center;
     justify-content : space-between;
-    border : 1px solid black;
-    padding : 10px;
-    border-radius: 30px;
-    font-size: 14px;
+    box-shadow : ${({ theme }) => theme.shadows.md};
+    padding : ${({ theme }) => theme.spacing.s2};
+    border-radius: ${({ theme }) => theme.borderRadius['3xl']};
+    font-size: ${({ theme }) => theme.fontSizes.sm};
     font-family : ${({ theme }) => theme.fontFamily.secondary};
 `;
 
@@ -45,21 +45,21 @@ const SearchInput = styled.input`
 const LeftSide = styled.div`
     width : 100%;
     display : flex;
-    gap : 10px;
+    gap : ${({ theme }) => theme.spacing.s2};
     align-items : center;
-    padding-left: 20px;
+    padding-left: ${({ theme }) => theme.spacing.s5};
 `;
 const RightSide = styled.div`
     width : 60%;
     display : flex;
-    gap : 10px;
+    gap : ${({ theme }) => theme.spacing.s2};
 `;
 
 const RightBtn = styled.button`
     width : 100px;
-    padding : 8px;
-    margin-right: 20px;
-    color : #111827;
+    padding : ${({ theme }) => theme.spacing.s2};
+    margin-right: ${({ theme }) => theme.spacing.s5};
+    color : ${({ theme }) => theme.colors.black};
     font-family : ${({ theme }) => theme.fontFamily.primary};
 `;
 export default SearchBar

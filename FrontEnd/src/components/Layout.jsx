@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './Header';
+import Header from './common/Header';
 import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
-import Search from './Search';
+import Search from './common/Search/Search';
 
 const Layout = () => {
   return (

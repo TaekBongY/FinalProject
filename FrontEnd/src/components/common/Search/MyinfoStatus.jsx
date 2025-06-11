@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import btn from '../styles/Button'
+import btn from '../../../styles/Button'
 
 const MyinfoStatus = () => {
     // userContext 저장 후 실행
@@ -9,7 +9,7 @@ const MyinfoStatus = () => {
 
   return (
     <InfoBox>
-        <Title>나의 심리 정보</Title>
+        <HeadTitle>나의 심리 정보</HeadTitle>
       <InfoStatus>
         <Title>나의 스트레스 상태</Title>
         <TextT>[아이콘] 20/40 점 [아이콘]중증</TextT>
@@ -35,29 +35,33 @@ const MyinfoStatus = () => {
 }
 const InfoBox = styled.div`
     width : 40%;
-    border: 1px solid yellow;
-    margin-left: 50px;
-    padding : 10px;
-    background-color: white;
+    border: 1px solid ${({ theme }) => theme.colors.primary};;
+    margin-left: ${({ theme }) => theme.spacing.s12};
+    padding : ${({ theme }) => theme.spacing.s2};
+    background-color: ${({ theme }) => theme.colors.white};
 `;
 
 const InfoStatus = styled.div`
     text-align : left;
-    padding-left: 10px;
+    padding-left: ${({ theme }) => theme.spacing.s2};
     font-family : ${({ theme }) => theme.fontFamily.primary};
+`;
+const HeadTitle = styled.p`
+    font-size: ${({ theme }) => theme.fontSizes.base};
+    font-weight: ${({ theme }) => theme.fontWeights.bold};
 `;
 
 const Title = styled.p`
-    font-weight: bold;
-    margin : 4px 2px 4px 2px;
+    margin : ${({ theme }) => theme.spacing.s2} ${({ theme }) => theme.spacing.s1};
+    font-weight: ${({ theme }) => theme.fontWeights.medium};
 `;
 const TestBtn = styled.button`
-    color : black;
-    padding : 4px 10px;
+    color : ${({ theme }) => theme.colors.black};
+    padding : ${({ theme }) => theme.spacing.s2} ${({ theme }) => theme.spacing.s3};
 `;
 
 const TextT = styled.p`
     font-family : ${({ theme }) => theme.fontFamily.secondary};
-    font-size: 14px;
+    font-size: ${({ theme }) => theme.fontSizes.sm};
 `;
 export default MyinfoStatus

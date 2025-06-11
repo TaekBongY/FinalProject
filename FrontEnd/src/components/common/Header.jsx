@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import bgImg from '../assets/backgroundImg.jpg';
-import logo from '../assets/logo.png';
+import bgImg from '../../assets/backgroundImg.jpg';
+import logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
 
 const menuData = [
