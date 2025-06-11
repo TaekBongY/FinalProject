@@ -10,7 +10,7 @@ const theme = {
     white: '#ffffff',
     black: '#000000',
     gray: {
-      100: '#f3f4f6',
+      100: '#f3f3f3',
       200: '#e5e7eb',
       300: '#d1d5db',
       400: '#9ca3af',
