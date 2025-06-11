@@ -1,8 +1,8 @@
 //css : scpt
 const theme = {
   colors: {
-    primary: '#646cff',
-    secondary: '#535bf2',
+    primary: '#FFEB8C',
+    secondary: '#FAD700',
     info: '#61dafb',
     success: '#22c55e',
     warning: '#f59e0b',
@@ -10,7 +10,7 @@ const theme = {
     white: '#ffffff',
     black: '#000000',
     gray: {
-      100: '#f3f4f6',
+      100: '#f3f3f3',
       200: '#e5e7eb',
       300: '#d1d5db',
       400: '#9ca3af',
@@ -105,6 +105,10 @@ const theme = {
     skipLink: 1600,
     toast: 1700,
     tooltip: 1800,
+  },
+  fontFamily : {
+    primary : 'Godo B',
+    secondary : 'GyeonggiTitleOTF',
   },
 };
 

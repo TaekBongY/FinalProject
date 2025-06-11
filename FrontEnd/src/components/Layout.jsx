@@ -1,16 +1,21 @@
 import React from 'react';
-import Header from './Header';
+import Header from './common/Header';
 import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
-
+import Search from './common/Search/Search';
+import Footer from './common/Footer';
+import Input from '../styles/Input';
 
 const Layout = () => {
   return (
     <>
       <Header />
+      <Search />
       <Content>
         <Outlet />
       </Content>
+      <input style={Input.InputGray} />
+      <Footer />
     </>
   );
 };
