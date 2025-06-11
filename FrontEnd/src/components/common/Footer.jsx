@@ -13,7 +13,8 @@ const Footer = () => {
         <InfoText>
           주소: {SITE_CONFIG.contact.address} &nbsp;&nbsp;&nbsp; 대표전화: {SITE_CONFIG.contact.phone}{' '}
           &nbsp;&nbsp;&nbsp; 관리자: {SITE_CONFIG.info.ceo} &nbsp;&nbsp;&nbsp; 상호: {SITE_CONFIG.name}{' '}
-          &nbsp;&nbsp;&nbsp; 사업자등록번호: {SITE_CONFIG.info.company_number} &nbsp;&nbsp;&nbsp; 이메일:{' '}
+          &nbsp;&nbsp;&nbsp;
+          <br /> 사업자등록번호: {SITE_CONFIG.info.company_number} &nbsp;&nbsp;&nbsp; 이메일:{' '}
           {SITE_CONFIG.contact.email} &nbsp;&nbsp;&nbsp;
         </InfoText>
         <Copyright>{SITE_CONFIG.description}</Copyright>
@@ -30,7 +31,7 @@ const FooterContainer = styled.footer`
   position: relative;
   bottom: 0;
   width: 100%;
-  height: 200px;
+  height: 150px;
 `;
 
 const FooterWrapper = styled.div`
@@ -55,7 +56,7 @@ const Logo = styled.img`
 `;
 
 const InfoText = styled.div`
-  padding-top: 20px;
+  padding-top: 10px;
   font-size: ${({ theme }) => theme.fontSizes.sm};
   line-height: 1.6;
 `;
@@ -63,7 +64,7 @@ const InfoText = styled.div`
 const Copyright = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.xs};
   color: ${({ theme }) => theme.colors.gray[400]};
-  margin-top: ${({ theme }) => theme.spacing[2]};
+  margin-top: 8px;
 `;
 
 export default Footer;
