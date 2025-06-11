@@ -6,6 +6,7 @@ import theme from './styles/theme';
 import GlobalStyle from './styles/GlobalStyle';
 import Layout from './components/Layout';
 import Home from './pages/Home';
+import SearchBar from './components/SearchBar';
 function App() {
   return (
     <BrowserRouter>
