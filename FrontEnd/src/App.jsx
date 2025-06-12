@@ -7,6 +7,8 @@ import GlobalStyle from './styles/GlobalStyle';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Workcation from './pages/Workcation';
+import Login from './pages/Login/Login';
+import SignUp from './pages/Login/SignUp';
 function App() {
   return (
     <BrowserRouter>
@@ -19,7 +21,8 @@ function App() {
             <Route path="/wrokcation" element={<Workcation />} />
           </Route>
           {/* 레이아웃 미적용*/}
-          {/* <Route path="/error" element={<Error404 />} /> */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/signUp" element={<SignUp />} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>
