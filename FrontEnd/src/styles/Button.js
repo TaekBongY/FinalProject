@@ -5,8 +5,6 @@ const btn = {
   buttonLogin: {
     boxSizing: 'border-box',
     position: 'absolute',
-    width: '200px',
-    height: '60px',
     left: 'calc(50% - 100px)',
     top: 'calc(50% - 30px)',
     border: '4px solid #000000',
@@ -33,8 +31,6 @@ const btn = {
   },
   buttonBorder: {
     boxSizing: 'border-box',
-    width: '200px',
-    height: '40px',
     background: '#feffe0',
     border: '3px solid #dda900',
     borderRadius: '10px',
@@ -51,8 +47,6 @@ const btn = {
   buttonWhite: {
     boxSizing: 'border-box',
     position: 'absolute',
-    width: '200px',
-    height: '40px',
     left: 'calc(50% - 200px / 2 + 122px)',
     top: '702px',
     background: '#ffffff',

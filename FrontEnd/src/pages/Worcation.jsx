@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 
-const Workcation = () => {
+const Worcation = () => {
   return <Div1>2테스트임2</Div1>;
-}
+};
 const Div1 = styled.div`
   width: 100%;
   height: 100vh;
@@ -14,4 +14,4 @@ const Div1 = styled.div`
   font-size: 24px;
   color: #333;
 `;
-export default Workcation
+export default Worcation;
