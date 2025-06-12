@@ -25,23 +25,24 @@ public class Review {
     @Column(name = "writer_id",nullable = false,length = 30)
     private String writerId;
 
-    @Column(name="reviewer_content", nullable = false)
-    private String reviewerContent;
+    @Lob
+    @Column(name="review_content", nullable = false)
+    private String reviewContent;
 
     @Column(name="create_at",nullable = false)
-    private Timestamp createAt;
+    private LocalDateTime createAt;
 
     @Column(name="update_at",nullable = false)
-    private Timestamp updateAt;
+    private LocalDateTime updateAt;
 
     @PrePersist
     protected void onCreate() {
-        this.createAt = Timestamp.valueOf(LocalDateTime.now());
-        this.updateAt = Timestamp.valueOf(LocalDateTime.now());
+        this.createAt = LocalDateTime.now();
+        this.updateAt = LocalDateTime.now();
     }
 
     @PreUpdate
     protected void onUpdate() {
-        this.updateAt = Timestamp.valueOf(LocalDateTime.now());
+        this.updateAt = LocalDateTime.now();
     }
 }

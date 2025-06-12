@@ -23,10 +23,10 @@ public class WorcationDetail {
     @JoinColumn(name = "worcation_no", nullable = false)
     private Worcation worcation;
 
-    @Column(name="licensee", length=20)
+    @Column(name="licensee", length=20, nullable = false)
     private String licensee;
 
-    @Column(name="business_id", length=10)
+    @Column(name="business_id", length=10, nullable = false)
     private String businessId;
 
     @Column(name="worcation_tel", length=13)
@@ -50,6 +50,6 @@ public class WorcationDetail {
     @Column(name="refund_policy")
     private String refundPolicy;
 
-    @Column(name="open_date")
+    @Column(name="open_date", nullable = false)
     private LocalDate openDate;
 }

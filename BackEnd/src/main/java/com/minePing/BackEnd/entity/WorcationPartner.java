@@ -3,6 +3,7 @@ package com.minePing.BackEnd.entity;
 import com.minePing.BackEnd.enums.CommonEnums;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;
@@ -35,13 +36,13 @@ public class WorcationPartner {
     @JoinColumn(name = "company_no", nullable = false)
     private Company company;
 
-    @Column(name = "company_count", nullable = false)
-    private Integer companyCount;
+    @Column(name = "company_people", nullable = false)
+    private Integer companyPeople;
 
-    @Column(name = "start_time", nullable = false)
+    @Column(name = "start_date", nullable = false)
     private LocalDate startTime;
 
-    @Column(name = "end_time", nullable = false)
+    @Column(name = "end_date", nullable = false)
     private LocalDate endTime;
 
     @Column(name = "approve", nullable = false)
@@ -50,21 +51,16 @@ public class WorcationPartner {
     @Column(name = "create_at", nullable = false)
     private LocalDateTime createAt;
 
+    @UpdateTimestamp
     @Column(name = "update_at", nullable = false)
     private LocalDateTime updateAt;
 
     @PrePersist
     protected void onCreate() {
         this.createAt = LocalDateTime.now();
-        this.updateAt = LocalDateTime.now();
         if(this.approve == null) {
             approve = CommonEnums.Approve.N;
         }
-    }
-
-    @PreUpdate
-    protected void onUpdate() {
-        this.updateAt = LocalDateTime.now();
     }
 
 }
