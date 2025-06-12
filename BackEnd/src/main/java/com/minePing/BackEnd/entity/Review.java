@@ -18,11 +18,10 @@ public class Review {
     @Column(name = "review_no")
     private Long reviewNo;
 
-    //연관관계해줘야함
-    @Column(name = "application_no")
-    private Long applicationNo;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "application_no", nullable = false)
+    private WorcationApplication worcationApplication;
 
-    //연관관계 해줘야함
     @Column(name = "writer_id",nullable = false,length = 30)
     private String writerId;
 
@@ -34,4 +33,15 @@ public class Review {
 
     @Column(name="update_at",nullable = false)
     private Timestamp updateAt;
+
+    @PrePersist
+    protected void onCreate() {
+        this.createAt = Timestamp.valueOf(LocalDateTime.now());
+        this.updateAt = Timestamp.valueOf(LocalDateTime.now());
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.updateAt = Timestamp.valueOf(LocalDateTime.now());
+    }
 }

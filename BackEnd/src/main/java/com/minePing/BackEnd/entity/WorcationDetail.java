@@ -11,12 +11,17 @@ import java.time.LocalDateTime;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 @Entity
+@Table(name = "worcation_detail")
 public class WorcationDetail {
 
-    //연관관계해워쟈함
     @Id
-    @Column(name="worcation_no")
+    @Column(name = "worcation_no")
     private Long worcationNo;
+
+    @MapsId
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "worcation_no", nullable = false)
+    private Worcation worcation;
 
     @Column(name="licensee", nullable=false, length=20)
     private String licensee;

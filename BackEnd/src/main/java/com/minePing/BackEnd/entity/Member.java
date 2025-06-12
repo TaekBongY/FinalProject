@@ -9,12 +9,15 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 @Entity
+@Table(indexes = {@Index(name = "idx_company", columnList = "company_no")})
 public class Member {
     @Id // PK
     @GeneratedValue(strategy = GenerationType.IDENTITY) //pk값 자동생성(AUTO_INCREMENT방식)
@@ -60,8 +63,8 @@ public class Member {
     @Column(name="position",length = 30)
     private String position;
 
-    @Column(name="create_date",nullable = false)
-    private LocalDate createDate;
+    @Column(name="create_at",nullable = false)
+    private LocalDateTime createAt;
 
     @Column(name="update_at",nullable = false)
     private Timestamp updateAt;
@@ -69,4 +72,40 @@ public class Member {
     @Enumerated(EnumType.STRING)
     @Column(name="status",nullable = false)
     private CommonEnums.Status status;
+
+    @OneToMany(mappedBy = "member", orphanRemoval = false)
+    @Builder.Default
+    private List<WorcationPartner> worcationPartners = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Builder.Default
+    private List<WorcationApplication> worcationApplications = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, orphanRemoval = false)
+    @Builder.Default
+    private List<Worcation> worcations = new ArrayList<>();
+
+    @OneToOne(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Health health;
+
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Builder.Default
+    private List<Mental> mentals = new ArrayList<>();
+
+    @OneToOne(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
+    private MemberPreference memberPreferences;
+
+    @PrePersist
+    protected void onCreate() {
+        this.createAt = LocalDateTime.now();
+        this.updateAt = Timestamp.valueOf(LocalDateTime.now());
+        if (this.status == null){
+            status = CommonEnums.Status.Y;
+        }
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.updateAt = Timestamp.valueOf(LocalDateTime.now());
+    }
 }

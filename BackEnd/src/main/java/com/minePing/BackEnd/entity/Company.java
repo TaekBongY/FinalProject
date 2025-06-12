@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @AllArgsConstructor
@@ -21,13 +24,13 @@ public class Company {
     @Column(name = "company_name", nullable = false, length = 150)
     private String companyName;
 
-    @Column(name = "create_date", nullable = false)
-    private LocalDate createDate;
+    @Column(name = "open_date", nullable = false)
+    private LocalDate openDate;
 
     @Column(name="address",nullable = false)
     private String address;
 
-    @Column(name="address",nullable = false, length = 100)
+    @Column(name="email",nullable = false, length = 100)
     private String email;
 
     @Column(name="company_tel",nullable = false, length = 13)
@@ -36,4 +39,33 @@ public class Company {
     @Column(name="status",nullable = false)
     @Enumerated(EnumType.STRING)
     private CommonEnums.Status status;
+
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Builder.Default
+    private List<WorcationPartner> worcationPartners = new ArrayList<>();
+
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Builder.Default
+    private List<Member> members = new ArrayList<>();
+
+    @Column(name = "create_at", nullable = false)
+    private LocalDateTime createAt;
+
+    @Column(name = "update_at", nullable = false)
+    private LocalDateTime updateAt;
+
+
+    @PrePersist
+    protected void onCreate() {
+        createAt = LocalDateTime.now();
+        updateAt = LocalDateTime.now();
+        if(this.status == null) {
+            this.status = CommonEnums.Status.Y;
+        }
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        updateAt = LocalDateTime.now();
+    }
 }
