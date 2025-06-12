@@ -9,16 +9,11 @@ import WorcationList from '../pages/WorcationList';
 import Main from '../pages/MainPage';
 import Detail from '../pages/WorcationDetail';
 
-
-
 const Layout = () => {
   return (
     <>
       <Header />
-      <Content>
-        {/* <Outlet /> */}
-        <Detail />
-      </Content>
+      <Content>{/* <Outlet /> */}</Content>
       <Footer />
     </>
   );
