@@ -5,6 +5,7 @@ import com.minePing.BackEnd.enums.WorcationEnums;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -34,8 +35,8 @@ public class Worcation {
     @Enumerated(EnumType.STRING)
     private WorcationEnums.Category worcationCategory;
 
-    @Column(name = "main_chaing_photo",nullable = false,length = 100)
-    private String mainChaingePhoto;
+    @Column(name = "main_chang_photo",nullable = false,length = 100)
+    private String mainChangePhoto;
 
     @Column(name = "worcation_hema",nullable = false,length = 20)
     private String worcationThema;
@@ -53,7 +54,7 @@ public class Worcation {
     private String address;
 
     @Column(name = "update_at")
-    private LocalDateTime updateAt;
+    private Timestamp updateAt;
 
     @Column(name = "create_at")
     private LocalDate createAt;
@@ -61,7 +62,5 @@ public class Worcation {
     @Column(name = "status")
     @Enumerated(EnumType.STRING)
     private CommonEnums.Status status;
-
-
 
 }

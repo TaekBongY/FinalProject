@@ -3,6 +3,7 @@ package com.minePing.BackEnd.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Getter
@@ -28,9 +29,9 @@ public class Review {
     @Column(name="reviewer_content", nullable = false)
     private String reviewerContent;
 
-    @Column(name="create_time",nullable = false)
-    private LocalDateTime createTime;
+    @Column(name="create_at",nullable = false)
+    private Timestamp createAt;
 
     @Column(name="update_at",nullable = false)
-    private LocalDateTime updateAt;
+    private Timestamp updateAt;
 }

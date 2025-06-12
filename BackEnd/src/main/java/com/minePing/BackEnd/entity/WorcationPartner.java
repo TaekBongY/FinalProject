@@ -3,6 +3,7 @@ package com.minePing.BackEnd.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -38,7 +39,7 @@ public class WorcationPartner {
     private LocalDate endTime;
 
     @Column(name = "create_at")
-    private LocalDateTime createAt;
+    private Timestamp createAt;
 
 
 }

@@ -31,42 +31,42 @@ public class Member {
     @Column(name="user_pwd", nullable = false)
     private String userPwd;
 
-    @Column(nullable = false, length = 50)
+    @Column(name="name",nullable = false, length = 50)
     private String name;
 
-    @Column(nullable = false, length = 100)
+    @Column(name="email",nullable = false, length = 100)
     private String email;
 
-    @Column(nullable = false)
+    @Column(name="gender",nullable = false)
     @Enumerated(EnumType.STRING)
     private CommonEnums.Gender gender;
 
-    @Column(nullable = false)
+    @Column(name="birthday",nullable = false)
     private LocalDate birthday;
 
-    @Column(nullable = false, length = 40)
+    @Column(name="address",nullable = false, length = 40)
     private String address;
 
-    @Column(nullable = false, length = 13)
+    @Column(name="phone",nullable = false, length = 13)
     private String phone;
 
-    @Column(nullable = false)
+    @Column(name="role",nullable = false)
     @Enumerated(EnumType.STRING)
     private CommonEnums.Role role;
 
-    @Column(length = 50)
+    @Column(name="department",length = 50)
     private String department;
 
-    @Column(length = 30)
+    @Column(name="position",length = 30)
     private String position;
 
-    @Column(nullable = false)
+    @Column(name="create_date",nullable = false)
     private LocalDate createDate;
 
-    @Column(nullable = false)
+    @Column(name="update_at",nullable = false)
     private Timestamp updateAt;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(name="status",nullable = false)
     private CommonEnums.Status status;
 }

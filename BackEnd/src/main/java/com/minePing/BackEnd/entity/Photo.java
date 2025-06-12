@@ -19,7 +19,6 @@ public class Photo {
     @Column(name = "worcation_no")
     private Long worcationNo;
 
-    //null을 어떻게 할지 정해야함
-    @Column(name = "chainge_name", length = 100)
-    private String chaingeName;
+    @Column(name = "change_name", length = 100, nullable = false)
+    private String changeName;
 }

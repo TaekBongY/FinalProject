@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Search from './common/Search/Search';
 import Footer from './common/Footer';
 import Input from '../styles/Input';
+import WorkationList from '../test/WorkationList';
 
 const Layout = () => {
   return (
@@ -16,6 +17,7 @@ const Layout = () => {
       </Content>
       <input style={Input.InputGray} />
       <Footer />
+      <WorkationList />
     </>
   );
 };

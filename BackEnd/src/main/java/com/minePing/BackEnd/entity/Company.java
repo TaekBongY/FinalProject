@@ -24,16 +24,16 @@ public class Company {
     @Column(name = "create_date", nullable = false)
     private LocalDate createDate;
 
-    @Column(nullable = false)
+    @Column(name="address",nullable = false)
     private String address;
 
-    @Column(nullable = false, length = 100)
+    @Column(name="address",nullable = false, length = 100)
     private String email;
 
-    @Column(nullable = false, length = 13)
+    @Column(name="company_tel",nullable = false, length = 13)
     private String companyTel;
 
-    @Column(nullable = false)
+    @Column(name="status",nullable = false)
     @Enumerated(EnumType.STRING)
     private CommonEnums.Status status;
 }

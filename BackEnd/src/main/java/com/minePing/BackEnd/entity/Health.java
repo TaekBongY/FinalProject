@@ -20,13 +20,13 @@ public class Health {
     @JoinColumn(name = "user_no", nullable = false)
     private Member member;
 
-    @Column(nullable = false)
+    @Column(name="weight",nullable = false)
     private Integer weight;
 
-    @Column(nullable = false)
+    @Column(name="height",nullable = false)
     private Float height;
 
-    @Column(nullable = false)
+    @Column(name="bmi",nullable = false)
     private Float bmi;
 
     @Column(name="blood_pressure", nullable = false)
