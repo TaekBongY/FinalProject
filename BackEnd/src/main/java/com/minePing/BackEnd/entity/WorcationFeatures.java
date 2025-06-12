@@ -21,21 +21,21 @@ public class WorcationFeatures {
     @JoinColumn(name = "worcation_no", nullable = false)
     private Worcation worcation;
 
-    @Column(name = "location_type", nullable = false, length = 10)
+    @Column(name = "location_type")
     private WorcationEnums.LocationType locationType;
 
-    @Column(name = "dominant_color", nullable = false, length = 20)
+    @Column(name = "dominant_color")
     private WorcationEnums.DominantColor dominantColor;
 
-    @Column(name = "space_mood", nullable = false, length = 15)
+    @Column(name = "space_mood")
     private WorcationEnums.SpaceMood spaceMood;
 
-    @Column(name = "besr_for", nullable = false, length = 15)
+    @Column(name = "besr_for")
     private WorcationEnums.BestFor besrFor;
 
-    @Column(name = "activities", nullable = false)
+    @Column(name = "activities")
     private WorcationEnums.Activities activities;
 
-    @Column(name = "accommodation_type", nullable = false, length = 20)
+    @Column(name = "accommodation_type")
     private WorcationEnums.AccommodationType accommodationType;
 }

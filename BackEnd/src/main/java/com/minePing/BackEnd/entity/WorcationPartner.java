@@ -32,25 +32,39 @@ public class WorcationPartner {
     private Member member;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "company_no")
+    @JoinColumn(name = "company_no", nullable = false)
     private Company company;
 
-    @Column(name = "company_count")
+    @Column(name = "company_count", nullable = false)
     private Integer companyCount;
 
-    @Column(name = "start_time")
+    @Column(name = "start_time", nullable = false)
     private LocalDate startTime;
 
-    @Column(name = "end_time")
+    @Column(name = "end_time", nullable = false)
     private LocalDate endTime;
 
-    @Column(name = "create_at")
-    private Timestamp createAt;
+    @Column(name = "approve", nullable = false)
+    private CommonEnums.Approve approve;
 
+    @Column(name = "create_at", nullable = false)
+    private LocalDateTime createAt;
+
+    @Column(name = "update_at", nullable = false)
+    private LocalDateTime updateAt;
 
     @PrePersist
     protected void onCreate() {
-        this.createAt = Timestamp.valueOf(LocalDateTime.now());
+        this.createAt = LocalDateTime.now();
+        this.updateAt = LocalDateTime.now();
+        if(this.approve == null) {
+            approve = CommonEnums.Approve.N;
+        }
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.updateAt = LocalDateTime.now();
     }
 
 }

@@ -3,6 +3,8 @@ package com.minePing.BackEnd.entity;
 import com.minePing.BackEnd.enums.CommonEnums;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;
@@ -19,7 +21,7 @@ public class WorcationApplication {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "application_no")
+    @Column(name= "application_no", nullable = false)
     private Long applicationNo;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -31,19 +33,21 @@ public class WorcationApplication {
     private Worcation worcation;
 
     @Enumerated(EnumType.STRING)
-    @Column(name="approve")
+    @Column(name="approve", nullable = false)
     private CommonEnums.Approve approve;
 
-    @Column(name = "start_date")
+    @Column(name = "start_date", nullable = false)
     private LocalDate startDate;
 
-    @Column(name = "end_date")
+    @Column(name = "end_date", nullable = false)
     private LocalDate endDate;
 
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", name = "create_at")
+    @CreationTimestamp
+    @Column(name = "create_at", nullable = false)
     private Timestamp createAt;
 
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", name = "update_at")
+    @UpdateTimestamp
+    @Column(name = "update_at", nullable = false)
     private Timestamp updateAt;
 
     @OneToOne(mappedBy = "worcationApplication", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -51,12 +55,8 @@ public class WorcationApplication {
 
     @PrePersist
     protected void onCreate() {
-        this.createAt = Timestamp.valueOf(LocalDateTime.now());
-        this.updateAt = Timestamp.valueOf(LocalDateTime.now());
-    }
-
-    @PreUpdate
-    protected void onUpdate() {
-        this.updateAt = Timestamp.valueOf(LocalDateTime.now());
+        if(approve == null) {
+            approve = CommonEnums.Approve.N;
+        }
     }
 }
