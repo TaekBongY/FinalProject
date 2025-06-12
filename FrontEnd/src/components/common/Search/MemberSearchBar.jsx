@@ -1,25 +1,31 @@
-import React from 'react';
+import React from 'react'
 import styled from 'styled-components';
-import SearchBtn from '../../../assets/SearchBtn.png';
 import btn from '../../../styles/Button';
-const SearchBar = () => {
+import SearchBtn from '../../../assets/SearchBtn.png';
+const MemberSearchBar = () => {
   return (
+    <SearchInner>
     <BarWrap>
       <LeftSide>
         <BtnImg src={SearchBtn} />
-        <SearchInput type="text" placeholder="워케이션 떠날 장소를 입력하세요" />
+        <SearchInput type="text" placeholder="직원이름을 입력해주세요." />
       </LeftSide>
-      <RightSide>
-        <div>|</div>
-        <div>캘랜더 자리 06.04.수 ~ 06.06.금 (2박)</div>
-      </RightSide>
-      <div>
         <RightBtn style={btn.buttonYb}>검색</RightBtn>
-      </div>
       <div />
     </BarWrap>
+    </SearchInner>
   );
-};
+}
+const SearchInner = styled.div`
+    max-width : 1280px;
+    height : 100%;
+    margin: ${({ theme }) => theme.spacing.s0} auto;
+    padding: ${({ theme }) => theme.spacing.s4};
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+`;
 const BarWrap = styled.div`
   width: 100%;
   display: flex;
@@ -30,7 +36,7 @@ const BarWrap = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius['3xl']};
   font-size: ${({ theme }) => theme.fontSizes.sm};
   font-family: ${({ theme }) => theme.fontFamily.secondary};
-  background-color : ${({ theme }) => theme.colors.white};;
+  background-color : ${({ theme }) => theme.colors.white};
 `;
 
 const BtnImg = styled.img`
@@ -49,11 +55,6 @@ const LeftSide = styled.div`
   align-items: center;
   padding-left: ${({ theme }) => theme.spacing.s5};
 `;
-const RightSide = styled.div`
-  width: 60%;
-  display: flex;
-  gap: ${({ theme }) => theme.spacing.s2};
-`;
 
 const RightBtn = styled.button`
   width: 100px;
@@ -62,4 +63,4 @@ const RightBtn = styled.button`
   color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fontFamily.primary};
 `;
-export default SearchBar;
+export default MemberSearchBar

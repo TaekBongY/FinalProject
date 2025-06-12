@@ -11,6 +11,14 @@ const Input = {
     border: '1px solid #6B7280',
     borderRadius: '10px',
   },
+  InputOrange: {
+    boxSizing: 'border-box',
+    width: '340px',
+    height: '48px',
+    background: '#FFFFFF',
+    border: '3px solid #F8C470',
+    borderRadius: '10px',
+  },
 };
 
 export default Input;
