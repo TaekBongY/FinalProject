@@ -5,8 +5,10 @@ import { ThemeProvider } from 'styled-components';
 import theme from './styles/theme';
 import GlobalStyle from './styles/GlobalStyle';
 import Layout from './components/Layout';
+import Layout2 from './components/Layout2';
 import Home from './pages/Home';
 import Workcation from './pages/Workcation';
+import Mypage from './pages/Mypage';
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +19,9 @@ function App() {
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/wrokcation" element={<Workcation />} />
+          </Route>
+          <Route element={<Layout2 />}>
+            <Route path="/my/info" element={<Mypage />} />
           </Route>
           {/* 레이아웃 미적용*/}
           {/* <Route path="/error" element={<Error404 />} /> */}

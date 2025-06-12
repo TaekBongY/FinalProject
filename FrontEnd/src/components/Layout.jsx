@@ -5,20 +5,21 @@ import styled from 'styled-components';
 import Search from './common/Search/Search';
 import Footer from './common/Footer';
 import Input from '../styles/Input';
+<<<<<<< HEAD
 import WorkationList from '../test/WorkationList';
 import Main from '../pages/MainPage';
+=======
+>>>>>>> PutuPing
 
 const Layout = () => {
   return (
     <>
       <Header />
-      <Search />
       <Content>
         {/* <Outlet /> */}
         <Main />
       </Content>
       <Footer />
-      <WorkationList />
     </>
   );
 };
