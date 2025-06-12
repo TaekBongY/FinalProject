@@ -7,6 +7,8 @@ import GlobalStyle from './styles/GlobalStyle';
 import Layout from './components/Layout';
 import Layout2 from './components/Layout2';
 import Home from './pages/Home';
+import Login from './pages/Login/Login';
+import SignUp from './pages/Login/SignUp';
 
 import Worcation from './pages/Worcation';
 

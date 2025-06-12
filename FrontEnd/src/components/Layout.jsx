@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './common/Header';
-// import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 import Search from './common/Search/Search';
 import Footer from './common/Footer';
@@ -13,7 +13,9 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <Content>{/* <Outlet /> */}</Content>
+      <Content>
+        <Outlet />
+      </Content>
       <Footer />
     </>
   );
