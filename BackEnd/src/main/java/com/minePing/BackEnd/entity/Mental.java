@@ -1,6 +1,7 @@
 package com.minePing.BackEnd.entity;
 
 import com.minePing.BackEnd.enums.CommonEnums;
+import com.minePing.BackEnd.enums.MentalEnums;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,6 +12,7 @@ import java.time.LocalDate;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 @Entity
+@Table(indexes = {@Index(name = "idx_member_application", columnList = "user_no")})
 public class Mental {
 
     @Id
@@ -18,23 +20,30 @@ public class Mental {
     @Column(name = "mental_no")
     private Long mentalNo;
 
-    //연관관계 해줘야함
-    @Column(name = "user_no")
-    private Long userNo;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_no", nullable = false)
+    private Member member;
 
     @Column(name = "score", nullable = false)
     private Integer score;
 
-    @Column(name = "status", nullable = false, length = 6)
-    private String status;
+    @Enumerated(EnumType.STRING)
+    @Column(name="psychological_state", nullable = false)
+    private MentalEnums.PsychologicalState psychologicalState;
 
     @Column(name = "content", nullable = false)
     private String content;
 
     @Column(name = "separation")
     @Enumerated(EnumType.STRING)
-    private CommonEnums.Separation separation;
+    private MentalEnums.Separation separation;
 
-    @Column(name="create_date")
-    private LocalDate createDate;
+    @Column(name="update_date")
+    private LocalDate updateDate;
+
+    @PrePersist
+    @PreUpdate
+    protected void onUpdate() {
+        this.updateDate = LocalDate.now();
+    }
 }
