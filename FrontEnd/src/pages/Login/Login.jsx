@@ -39,8 +39,8 @@ const LoginWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
-  color: #333;
+  font-size: ${({ theme }) => theme.fontSizes['2xl']};
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 const ContentWrap = styled.div`
@@ -65,7 +65,7 @@ const LogoWrap = styled.div`
   align-items: center;
   justify-content : center;
   gap: ${({ theme }) => theme.spacing.s4};
-  margin : 20px 10px;
+  margin : ${({ theme }) => theme.spacing.s5} ${({ theme }) => theme.spacing.s3};
 `;
 
 const LogoImg = styled.img`
@@ -88,22 +88,22 @@ const InputBox = styled.input`
     }};
     width: 100%;
     box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
-    margin : 16px 0;
-    padding : 12px;
+    margin : ${({ theme }) => theme.spacing.s4} ${({ theme }) => theme.spacing.s0};
+    padding : ${({ theme }) => theme.spacing.s3};
 `;
 const BtnFlex = styled.div`
     display: flex;
     justify-content : space-between;
-    gap: 10%;
+    gap: ${({ theme }) => theme.spacing.s12};
 `;
 
 const CommonLoginPage = css`
   width: 50%;
-  color: black;
-  border: 3px solid black;
-  border-radius: 50px;
-  margin: 12px 0px;
-  padding: 12px 0;
+  color: ${({ theme }) => theme.colors.black};
+  border: 3px solid ${({ theme }) => theme.colors.black};
+  border-radius: ${({ theme }) => theme.borderRadius['3xl']};
+  margin: ${({ theme }) => theme.spacing.s3} ${({ theme }) => theme.spacing.s0};
+  padding: ${({ theme }) => theme.spacing.s3} ${({ theme }) => theme.spacing.s0};
   display: flex;
   justify-content: center;
   align-items: center;
