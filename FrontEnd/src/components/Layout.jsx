@@ -1,11 +1,15 @@
 import React from 'react';
 import Header from './common/Header';
-import { Outlet } from 'react-router-dom';
+// import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 import Search from './common/Search/Search';
 import Footer from './common/Footer';
 import Input from '../styles/Input';
+<<<<<<< HEAD
 import WorkationList from '../test/WorkationList';
+=======
+import Main from '../pages/MainPage';
+>>>>>>> Sleeping
 
 const Layout = () => {
   return (
@@ -13,9 +17,9 @@ const Layout = () => {
       <Header />
       <Search />
       <Content>
-        <Outlet />
+        {/* <Outlet /> */}
+        <Main />
       </Content>
-      <input style={Input.InputGray} />
       <Footer />
       <WorkationList />
     </>
