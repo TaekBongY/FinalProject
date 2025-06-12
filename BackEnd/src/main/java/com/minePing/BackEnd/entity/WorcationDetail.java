@@ -23,30 +23,33 @@ public class WorcationDetail {
     @JoinColumn(name = "worcation_no", nullable = false)
     private Worcation worcation;
 
-    @Column(name="licensee", nullable=false, length=20)
+    @Column(name="licensee", length=20)
     private String licensee;
 
-    @Column(name="business_id", nullable=false, length=10)
+    @Column(name="business_id", length=10)
     private String businessId;
 
-    @Column(name="worcation_tel", nullable=false, length=13)
+    @Column(name="worcation_tel", length=13)
     private String worcationTel;
 
-    @Column(name="charge_amount", nullable=false)
+    @Column(name="charge_amount")
     private Integer chargeAmount;
 
-    @Column(name="content", nullable=false)
+    @Lob
+    @Column(name="content")
     private String content;
 
-    @Column(name="navigate", nullable=false)
+    @Lob
+    @Column(name="navigate")
     private String navigate;
 
-    @Column(name="available_time", nullable=false, length=100)
+    @Column(name="available_time", length=100)
     private String availableTime;
 
-    @Column(name="refund_policy", nullable=false)
+    @Lob
+    @Column(name="refund_policy")
     private String refundPolicy;
 
-    @Column(name="open_date", nullable=false)
+    @Column(name="open_date")
     private LocalDate openDate;
 }

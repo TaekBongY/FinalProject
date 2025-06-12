@@ -32,5 +32,4 @@ public class Amenity {
     @OneToMany(mappedBy = "amenity", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
     private List<WorcationAmenity> worcationAmenities = new ArrayList<>();
-
 }

@@ -34,7 +34,7 @@ public class Worcation {
     @Column(name = "worcation_name",nullable = false,length = 50)
     private String worcationName;
 
-    @Column(name = "worcation_category")
+    @Column(name = "worcation_category",nullable = false)
     @Enumerated(EnumType.STRING)
     private WorcationEnums.Category worcationCategory;
 
@@ -57,12 +57,12 @@ public class Worcation {
     private String address;
 
     @Column(name = "update_at")
-    private Timestamp updateAt;
+    private LocalDateTime updateAt;
 
     @Column(name = "create_at")
-    private Timestamp createAt;
+    private LocalDateTime createAt;
 
-    @Column(name = "status")
+    @Column(name = "status",nullable = false)
     @Enumerated(EnumType.STRING)
     private CommonEnums.Status status;
 
@@ -90,8 +90,8 @@ public class Worcation {
 
     @PrePersist
     protected void onCreate() {
-        this.createAt = Timestamp.valueOf(LocalDateTime.now());
-        this.updateAt = Timestamp.valueOf(LocalDateTime.now());
+        this.createAt = LocalDateTime.now();
+        this.updateAt = LocalDateTime.now();
         if(status == null){
             status = CommonEnums.Status.Y;
         }
@@ -99,6 +99,6 @@ public class Worcation {
 
     @PreUpdate
     protected void onUpdate() {
-        this.updateAt = Timestamp.valueOf(LocalDateTime.now());
+        this.updateAt = LocalDateTime.now();
     }
 }
