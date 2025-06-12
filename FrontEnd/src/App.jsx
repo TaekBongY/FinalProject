@@ -7,12 +7,8 @@ import GlobalStyle from './styles/GlobalStyle';
 import Layout from './components/Layout';
 import Layout2 from './components/Layout2';
 import Home from './pages/Home';
-<<<<<<< HEAD
 import Worcation from './pages/Worcation';
-=======
-import Workcation from './pages/Workcation';
 import Mypage from './pages/Mypage';
->>>>>>> 403bcc420feb013a59cf05db0856fc48b19370d8
 function App() {
   return (
     <BrowserRouter>
