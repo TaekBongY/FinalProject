@@ -9,14 +9,13 @@ import lombok.*;
 @Builder
 @Entity
 @Table(name = "worcation_amenity",
-        indexes = {@Index(name = "idx_worc_amenity", columnList = "worc_amenity_no")})
+        indexes = {@Index(name = "idx_worcation", columnList = "worcation_no")})
 public class WorcationAmenity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "worc_amenity_no")
     private Long worcAmenityNo;
-
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="worcation_no", nullable = false)

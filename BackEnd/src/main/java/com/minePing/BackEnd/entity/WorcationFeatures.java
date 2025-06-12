@@ -25,10 +25,10 @@ public class WorcationFeatures {
     private WorcationEnums.LocationType locationType;
 
     @Column(name = "dominant_color", nullable = false, length = 20)
-    private WorcationEnums.LocationType dominantColor;
+    private WorcationEnums.DominantColor dominantColor;
 
     @Column(name = "space_mood", nullable = false, length = 15)
-    private WorcationEnums.LocationType spaceMood;
+    private WorcationEnums.SpaceMood spaceMood;
 
     @Column(name = "besr_for", nullable = false, length = 15)
     private WorcationEnums.BestFor besrFor;

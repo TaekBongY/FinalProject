@@ -23,7 +23,7 @@ public class Health {
     private Member member;
 
     @Column(name="weight",nullable = false)
-    private Integer weight;
+    private Float weight;
 
     @Column(name="height",nullable = false)
     private Float height;
