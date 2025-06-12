@@ -1,5 +1,6 @@
 package com.minePing.BackEnd.entity;
 
+import com.minePing.BackEnd.enums.CommonEnums;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -12,6 +13,9 @@ import java.time.LocalDateTime;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 @Entity
+@Table(name = "worcation_partner",
+        indexes = {@Index(name = "idx_worcation_partner", columnList = "worcation_no")
+                ,@Index(name = "idx_company_partner", columnList = "company_no")})
 public class WorcationPartner {
 
     @Id
@@ -19,15 +23,17 @@ public class WorcationPartner {
     @Column(name = "partner_no")
     private Long partnerNo;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "worcation_no", nullable = false)
+    private Worcation worcation;
 
-    @Column(name = "worcation_no")
-    private Long worcationNo;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ref_writer_no", nullable = false)
+    private Member member;
 
-    @Column(name = "ref_writer_no")
-    private Long refWriterNo;
-
-    @Column(name = "company_no")
-    private Long companyNo;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "company_no")
+    private Company company;
 
     @Column(name = "company_count")
     private Integer companyCount;
@@ -35,11 +41,16 @@ public class WorcationPartner {
     @Column(name = "start_time")
     private LocalDate startTime;
 
-    @Column(name = "end-time")
+    @Column(name = "end_time")
     private LocalDate endTime;
 
     @Column(name = "create_at")
     private Timestamp createAt;
 
+
+    @PrePersist
+    protected void onCreate() {
+        this.createAt = Timestamp.valueOf(LocalDateTime.now());
+    }
 
 }

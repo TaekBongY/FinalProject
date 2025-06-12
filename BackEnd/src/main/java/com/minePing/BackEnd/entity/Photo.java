@@ -8,6 +8,7 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 @Entity
+@Table(indexes = {@Index(name = "idx_worcation", columnList = "worcation_no")})
 public class Photo {
 
     @Id
@@ -15,9 +16,9 @@ public class Photo {
     @Column(name = "photo_no")
     private Long photoNo;
 
-    // 연관관계 해줘야함
-    @Column(name = "worcation_no")
-    private Long worcationNo;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "worcation_no", nullable = false)
+    private Worcation worcation;
 
     @Column(name = "change_name", length = 100, nullable = false)
     private String changeName;

@@ -5,6 +5,8 @@ import com.minePing.BackEnd.enums.HealthEnums;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -21,7 +23,7 @@ public class Health {
     private Member member;
 
     @Column(name="weight",nullable = false)
-    private Integer weight;
+    private Float weight;
 
     @Column(name="height",nullable = false)
     private Float height;
@@ -56,4 +58,13 @@ public class Health {
     @Column(name="diet_type", nullable = false)
     @Enumerated(EnumType.STRING)
     private HealthEnums.DietType dietType;
+
+    @Column(name = "update_date", nullable = false)
+    private LocalDate updateDate;
+
+    @PrePersist
+    @PreUpdate
+    protected void onUpdate() {
+        this.updateDate = LocalDate.now();
+    }
 }

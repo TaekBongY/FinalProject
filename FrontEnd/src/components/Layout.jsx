@@ -5,15 +5,22 @@ import styled from 'styled-components';
 import Search from './common/Search/Search';
 import Footer from './common/Footer';
 import Input from '../styles/Input';
+<<<<<<< HEAD
 import WorcationList from '../pages/WorcationList';
 import Main from '../pages/MainPage';
 import Detail from '../pages/WorcationDetail';
+=======
+<<<<<<< HEAD
+import WorkationList from '../test/WorkationList';
+import Main from '../pages/MainPage';
+=======
+>>>>>>> PutuPing
+>>>>>>> 403bcc420feb013a59cf05db0856fc48b19370d8
 
 const Layout = () => {
   return (
     <>
       <Header />
-      <Search />
       <Content>
         {/* <Outlet /> */}
         <Detail />

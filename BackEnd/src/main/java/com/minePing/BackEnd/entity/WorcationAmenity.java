@@ -8,18 +8,20 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 @Entity
+@Table(name = "worcation_amenity",
+        indexes = {@Index(name = "idx_worcation", columnList = "worcation_no")})
 public class WorcationAmenity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "worc_amenity_no")
     private Long worcAmenityNo;
 
-    //연관관계 해줘야함
-    @Column(name = "worcation_no")
-    private Long worcationNo;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="worcation_no", nullable = false)
+    private Worcation worcation;
 
-    //연관관계 해줘야함
-    @Column(name = "amenities_no")
-    private Long amenitiesNo;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="amenity_no", nullable = false)
+    private Amenity amenity;
 }
