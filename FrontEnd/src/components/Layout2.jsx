@@ -1,19 +1,15 @@
-import React from 'react';
 import Header from './common/Header';
 import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
-import Search from './common/Search/Search';
 import Footer from './common/Footer';
-import Input from '../styles/Input';
 
-const Layout = () => {
+const Layout2 = () => {
   return (
     <>
       <Header />
       <Content>
         <Outlet />
       </Content>
-      <Footer />
     </>
   );
 };
@@ -25,4 +21,4 @@ const Content = styled.main`
   padding: 24px 16px;
 `;
 
-export default Layout;
+export default Layout2;

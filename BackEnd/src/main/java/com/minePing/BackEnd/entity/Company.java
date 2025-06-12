@@ -27,7 +27,7 @@ public class Company {
     @Column(name="address",nullable = false)
     private String address;
 
-    @Column(name="address",nullable = false, length = 100)
+    @Column(name="email",nullable = false, length = 100)
     private String email;
 
     @Column(name="company_tel",nullable = false, length = 13)
