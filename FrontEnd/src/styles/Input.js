@@ -22,6 +22,17 @@ const Input = {
     borderRadius: '10px',
     color: 'black',
   },
+  InputRadio: {
+    appearance: 'none',
+    WebkitAppearance: 'none',
+    MozAppearance: 'none',
+    backgroundColor: '#adadad',
+    width: '18px',
+    height: '18px',
+    borderRadius: '50%',
+    marginLeft: '10px',
+    cursor: 'pointer',
+  },
 };
 
 export default Input;

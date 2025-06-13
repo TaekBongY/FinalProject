@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Input from '../styles/Input';
+import btn from '../styles/Button';
 
 const Mypage = () => {
   return (
@@ -44,9 +45,21 @@ const Mypage = () => {
             <InputGroup>
               <InputName>성별</InputName>
               <RadioGroup>
-                <InputRadio type="radio" />
+                <input
+                  type="radio"
+                  style={{
+                    ...Input.InputRadio,
+                    marginLeft: 0,
+                  }}
+                />
                 남성
-                <InputRadio type="radio" />
+                <input
+                  type="radio"
+                  style={{
+                    ...Input.InputRadio,
+                    marginLeft: 0,
+                  }}
+                />
                 여성
               </RadioGroup>
             </InputGroup>
@@ -55,11 +68,29 @@ const Mypage = () => {
             <InputGroup>
               <InputName>등록</InputName>
               <RadioGroup>
-                <InputRadio type="radio" />
+                <input
+                  type="radio"
+                  style={{
+                    ...Input.InputRadio,
+                    marginLeft: 0,
+                  }}
+                />
                 직원
-                <InputRadio type="radio" />
+                <input
+                  type="radio"
+                  style={{
+                    ...Input.InputRadio,
+                    marginLeft: 0,
+                  }}
+                />
                 기업
-                <InputRadio type="radio" />
+                <input
+                  type="radio"
+                  style={{
+                    ...Input.InputRadio,
+                    marginLeft: 0,
+                  }}
+                />
                 워케이션 업체
               </RadioGroup>
             </InputGroup>
@@ -89,31 +120,33 @@ const Mypage = () => {
             </InputGroup>
           </Box>
         </Form>
+        <ButnContent>
+          <ButnBox>
+            <button style={btn.buttonYbShadow}>취소</button>
+            <button style={btn.buttonWbShadow}>완료</button>
+          </ButnBox>
+        </ButnContent>
       </Content>
     </>
   );
 };
+const ButnContent = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ButnBox = styled.div`
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+`;
 
 const RadioGroup = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
-`;
-
-const InputRadio = styled.input`
-  -webkit-appearance: none; // 웹킷 브라우저에서 기본 스타일 제거
-  -moz-appearance: none; // 모질라 브라우저에서 기본 스타일 제거
-  appearance: none; // 기본 브라우저에서 기본 스타일 제거
-  background-color: #adadad;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  margin-left: 10px;
-  cursor: pointer;
-
-  &:first-of-type {
-    margin-left: 0;
-  }
 `;
 
 const InputText = styled.input`
@@ -129,12 +162,12 @@ const InputGroup = styled.div`
 
 const Form = styled.form`
   display: flex;
-  gap: 30px;
   padding-top: 20px;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 const Content = styled.div`
+  width: 1100px;
   padding-left: 30px;
 `;
 
