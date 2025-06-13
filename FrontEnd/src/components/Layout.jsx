@@ -5,6 +5,9 @@ import styled from 'styled-components';
 import Search from './common/Search/Search';
 import Footer from './common/Footer';
 import Input from '../styles/Input';
+
+import Main from '../pages/MainPage';
+
 import WorcationList from '../pages/WorcationList';
 import Main from '../pages/MainPage';
 import Detail from '../pages/WorcationDetail';

@@ -101,8 +101,10 @@ const Header = () => {
 };
 
 const HeaderWrap = styled.header`
-  position: relative;
+  position: absolute;
   font-family: sans-serif;
+  width: 100%;
+  top: 0;
 `;
 
 const HeaderBg = styled.div`
