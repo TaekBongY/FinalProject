@@ -32,6 +32,7 @@ const SearchBg = styled.div`
 `;
 
 const SearchInner = styled.div`
+
   max-width: 1280px;
   height: 100%;
   margin: ${({ theme }) => theme.spacing.s0} auto;
@@ -39,5 +40,6 @@ const SearchInner = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+
 `;
 export default Search;

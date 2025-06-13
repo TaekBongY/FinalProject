@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Button from '../styles/Button';
-import busan1 from '../assets/busan1.jpg';
-import busan2 from '../assets/busan2.jpg';
 import seoul1 from '../assets/seoul1.jpg';
-import seoul2 from '../assets/seoul2.jpg';
 import siheung1 from '../assets/siheung1.jpg';
 import siheung2 from '../assets/siheung2.jpg';
 
@@ -35,76 +32,39 @@ const data = [
   },
 ];
 
-const PopularPlacesPage = () => {
-  const [showAISection, setShowAISection] = useState(false);
-
-  const handleShowAI = () => {
-    setShowAISection(true);
-  };
-
+const WorcationList = () => {
   return (
-    <Container>
-      <SectionTitle>제휴업체</SectionTitle>
-      <PartnerGrid>
-        <PartnerCard>
-          <PartnerImage src={busan1} alt="인천 서해앞바다 호텔" />
-          <ImageLabel>
-            <ImageLabelT>인천</ImageLabelT>
-            서해앞바다
-            <br />
-            3성급 호텔
-          </ImageLabel>
-        </PartnerCard>
-        <PartnerCard>
-          <PartnerImage src={busan2} alt="부산 광안해수욕장 호텔" />
-          <ImageLabel>
-            <ImageLabelT>부산</ImageLabelT>
-            광안해수욕장
-            <br />
-            3성급 호텔
-          </ImageLabel>
-        </PartnerCard>
-        <PartnerCard>
-          <PartnerImage src={seoul2} alt="서울 동대문 호텔" />
-          <ImageLabel>
-            <ImageLabelT>서울</ImageLabelT>
-            동대문프라자
-            <br />
-            5성급 호텔
-          </ImageLabel>
-        </PartnerCard>
-      </PartnerGrid>
+    <>
+      <Container>
+        <ButtonContainer>
+          <ButtonB style={Button.buttonBorder}>제휴 업체 보기</ButtonB>
+          <ButtonB style={Button.buttonBorder}>ai 추천</ButtonB>
+        </ButtonContainer>
 
-      <SectionTitle>
-        인기명소 <span style={{ fontSize: '16px', fontWeight: 'normal' }}>(Top10)</span>
-      </SectionTitle>
-      <CardList>
-        {data.map((item) => (
-          <PlaceCard key={item.id}>
-            <PlaceImage src={item.image} alt={item.name} />
-            <CardContent>
-              <InfoBlock>
-                <PlaceLocation>{item.location}</PlaceLocation>
-                <PlaceName>{item.name}</PlaceName>
-                <PlaceReview>리뷰 ({item.reviewCount})</PlaceReview>
-              </InfoBlock>
-              <ThemeBlock>
-                <ThemeLabel>테마</ThemeLabel>
-                <ThemeText>{item.theme}</ThemeText>
-                <ButtonD style={Button.buttonDetail}>상세보기</ButtonD>
-              </ThemeBlock>
-            </CardContent>
-          </PlaceCard>
-        ))}
-      </CardList>
+        <SectionTitle>전체 리스트 보기</SectionTitle>
+        <CardList>
+          {data.map((item) => (
+            <PlaceCard key={item.id}>
+              <PlaceImage src={item.image} alt={item.name} />
+              <CardContent>
+                <InfoBlock>
+                  <PlaceLocation>{item.location}</PlaceLocation>
+                  <PlaceName>{item.name}</PlaceName>
+                  <PlaceReview>리뷰 ({item.reviewCount})</PlaceReview>
+                </InfoBlock>
+                <ThemeBlock>
+                  <ThemeLabel>테마</ThemeLabel>
+                  <ThemeText>{item.theme}</ThemeText>
+                  <ButtonD style={Button.buttonDetail}>상세보기</ButtonD>
+                </ThemeBlock>
+              </CardContent>
+            </PlaceCard>
+          ))}
+        </CardList>
 
-      <BottomBanner>
-        <BottomButton onClick={handleShowAI}>AI로 여행지 추천 받기</BottomButton>
-      </BottomBanner>
-
-      {showAISection && (
-        <>
-          <SectionTitleAI>AI 추천</SectionTitleAI>
+        {/* AI 추천 부분 display로 없애기 */}
+        <Container2>
+          <SectionTitleAI>AI 추천 비제휴 업체</SectionTitleAI>
           <CardList>
             {data.map((item) => (
               <PlaceCard key={item.id}>
@@ -124,18 +84,36 @@ const PopularPlacesPage = () => {
               </PlaceCard>
             ))}
           </CardList>
-        </>
-      )}
-    </Container>
+        </Container2>
+      </Container>
+    </>
   );
 };
-
-export default PopularPlacesPage;
+export default WorcationList;
 
 const Container = styled.div`
   background-color: #fef6e4;
   min-height: 100vh;
-  padding: 60px 24px;
+  padding: 40px 24px;
+  border-top: 1px solid black;
+  margin-top: 20px;
+`;
+
+const Container2 = styled.div`
+  margin-top: 50px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: right;
+  margin-right: 30px;
+`;
+
+const ButtonB = styled.button`
+  width: 180px;
+  height: 50px;
+  margin-left: 30px;
 `;
 
 const SectionTitle = styled.h2`
