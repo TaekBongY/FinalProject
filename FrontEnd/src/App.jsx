@@ -9,6 +9,8 @@ import Layout2 from './components/Layout2';
 import Home from './pages/Home';
 import Workcation from './pages/Workcation';
 import Mypage from './pages/Mypage';
+import Register from './pages/worcation/register';
+import Layout3 from './components/Layout3';
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +24,9 @@ function App() {
           </Route>
           <Route element={<Layout2 />}>
             <Route path="/my/info" element={<Mypage />} />
+          </Route>
+          <Route element={<Layout3 />}>
+            <Route path="/worcation/register" element={<Register />} />
           </Route>
           {/* 레이아웃 미적용*/}
           {/* <Route path="/error" element={<Error404 />} /> */}

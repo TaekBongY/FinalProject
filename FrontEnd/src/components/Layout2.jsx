@@ -16,7 +16,7 @@ const Layout2 = () => {
 
 const Content = styled.main`
   width: 100%;
-  max-width: 1280px;
+  max-width: ${({ theme }) => theme.widthes.layoutWidth};
   margin: 0 auto;
   padding: 24px 16px;
 `;
