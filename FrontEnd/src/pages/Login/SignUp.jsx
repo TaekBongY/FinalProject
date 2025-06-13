@@ -13,6 +13,7 @@ const step1Inputs = [
   { name: 'address', type: 'text', placeholder: '주소', side: 'right' },
   { name: 'birth', type: 'text', placeholder: '생년월일', side: 'right' },
   { name: 'email', type: 'text', placeholder: '이메일', side: 'right' },
+  { name: 'phone', type: 'text', placeholder: '연락처', side: 'right' },
 ];
 
 const step2InputsForTypeA = [
