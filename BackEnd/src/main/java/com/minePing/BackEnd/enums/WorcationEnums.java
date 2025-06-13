@@ -21,10 +21,6 @@ public class WorcationEnums {
         work_efficiency, scenery, activity, rest, overall_vibe
     }
 
-    public enum Activities {
-        reading, swimming, food_tour, meditation, social
-    }
-
     public enum AccommodationType {
         clean_convenient, nature_lodging, camping_car, emotional_style, shared_space
     }

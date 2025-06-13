@@ -38,28 +38,29 @@ public class Worcation {
     @Enumerated(EnumType.STRING)
     private WorcationEnums.Category worcationCategory;
 
-    @Column(name = "main_change_photo",nullable = false,length = 100)
+    @Column(name = "main_change_photo",length = 100)
     private String mainChangePhoto;
 
-    @Column(name = "worcation_thema",nullable = false,length = 20)
+    @Column(name = "worcation_thema",length = 20)
     private String worcationThema;
 
-    @Column(name = "max_people",nullable = false)
+    @Column(name = "max_people")
     private Integer maxPeople;
 
-    @Column(name = "partner_price",nullable = false)
+    @Column(name = "partner_price")
     private String partnerPrice;
 
-    @Column(name = "non_partner_price",nullable = false)
+    @Lob
+    @Column(name = "non_partner_price")
     private Integer nonPartnerPrice;
 
-    @Column(name = "address",nullable = false,length = 100)
+    @Column(name = "address",length = 100)
     private String address;
 
-    @Column(name = "update_at")
+    @Column(name = "update_at",nullable = false)
     private LocalDateTime updateAt;
 
-    @Column(name = "create_at")
+    @Column(name = "create_at",nullable = false)
     private LocalDateTime createAt;
 
     @Column(name = "status",nullable = false)

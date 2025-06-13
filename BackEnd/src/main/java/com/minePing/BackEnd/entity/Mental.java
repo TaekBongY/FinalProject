@@ -31,8 +31,8 @@ public class Mental {
     @Column(name="psychological_state", nullable = false)
     private MentalEnums.PsychologicalState psychologicalState;
 
-    @Column(name = "content", nullable = false)
-    private String content;
+    @Column(name = "result_content", nullable = false, length = 512)
+    private String resultContent;
 
     @Column(name = "separation")
     @Enumerated(EnumType.STRING)

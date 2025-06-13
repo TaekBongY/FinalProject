@@ -57,8 +57,8 @@ public class MemberPreference {
     @Column(name = "update_date", nullable = false)
     private LocalDate updateDate;
 
-    @Column(name ="content", nullable = false)
-    private String content;
+    @Column(name ="result_content", nullable = false, length = 512)
+    private String resultContent;
 
     @PrePersist
     @PreUpdate

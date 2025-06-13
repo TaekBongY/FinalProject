@@ -24,6 +24,12 @@ public class Company {
     @Column(name = "company_name", nullable = false, length = 150)
     private String companyName;
 
+    @Column(name = "business_id", nullable = false, length = 10)
+    private String businessId;
+
+    @Column(name = "licensee", nullable = false, length = 20)
+    private String licensee;
+
     @Column(name = "open_date", nullable = false)
     private LocalDate openDate;
 
@@ -40,13 +46,6 @@ public class Company {
     @Enumerated(EnumType.STRING)
     private CommonEnums.Status status;
 
-    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
-    @Builder.Default
-    private List<WorcationPartner> worcationPartners = new ArrayList<>();
-
-    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
-    @Builder.Default
-    private List<Member> members = new ArrayList<>();
 
     @Column(name = "create_at", nullable = false)
     private LocalDateTime createAt;
@@ -54,6 +53,13 @@ public class Company {
     @Column(name = "update_at", nullable = false)
     private LocalDateTime updateAt;
 
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Builder.Default
+    private List<WorcationPartner> worcationPartners = new ArrayList<>();
+
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Builder.Default
+    private List<Member> members = new ArrayList<>();
 
     @PrePersist
     protected void onCreate() {

@@ -47,7 +47,7 @@ public class Member {
     @Column(name="birthday",nullable = false)
     private LocalDate birthday;
 
-    @Column(name="address",nullable = false, length = 40)
+    @Column(name="address",nullable = false, length = 100)
     private String address;
 
     @Column(name="phone",nullable = false, length = 13)
@@ -66,6 +66,7 @@ public class Member {
     @Column(name="create_at",nullable = false)
     private LocalDateTime createAt;
 
+    @UpdateTimestamp
     @Column(name="update_at",nullable = false)
     private Timestamp updateAt;
 
@@ -98,14 +99,8 @@ public class Member {
     @PrePersist
     protected void onCreate() {
         this.createAt = LocalDateTime.now();
-        this.updateAt = Timestamp.valueOf(LocalDateTime.now());
         if (this.status == null){
             status = CommonEnums.Status.Y;
         }
-    }
-
-    @PreUpdate
-    protected void onUpdate() {
-        this.updateAt = Timestamp.valueOf(LocalDateTime.now());
     }
 }

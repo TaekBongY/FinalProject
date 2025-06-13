@@ -33,8 +33,9 @@ public class WorcationFeatures {
     @Column(name = "besr_for")
     private WorcationEnums.BestFor besrFor;
 
+    @Lob
     @Column(name = "activities")
-    private WorcationEnums.Activities activities;
+    private String activities;
 
     @Column(name = "accommodation_type")
     private WorcationEnums.AccommodationType accommodationType;

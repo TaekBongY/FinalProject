@@ -20,6 +20,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 @Entity
+@Table(name = "amenity")
 public class Amenity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
